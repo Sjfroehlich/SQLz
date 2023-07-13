@@ -1,0 +1,37 @@
+CREATE TABLE Drum_Store (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, Receieve_Date TEXT, Manager_Stamp TEXT);
+INSERT INTO Drum_Store VALUES (1, "Drum Heads", 15,"7/6", "Yes");
+INSERT INTO Drum_Store VALUES (2, "Drum Sticks", 20, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (3, "General Hardware", 10,"7/6", "Yes");
+INSERT INTO Drum_Store VALUES (4, "Foot Pedals", 7, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (5, "Accoustic Shells", 3, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (6, "Electric Hardware", 4, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (7, "Cases", 17, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (8, "Cymbals 18 inch", 1, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (9, "Cymbals 16 inch", 3, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (10, "Cymbals 14 inch", 6, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (11, "Cymbals 12 inch", 11, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (12, "Cymbals 10 inch", 14, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (13, "Special Snares", 10, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (14, "World Percussion Overall Inventory", 15, "7/6", "Yes");
+INSERT INTO Drum_Store VALUES (15, "Kid's Section", 60, "7/6", "Yes");
+
+
+SELECT * FROM Drum_Store;
+
+SELECT * FROM Drum_Store WHERE quantity > 30 ORDER BY quantity DESC;
+
+
+--display the database ordered by price. 
+SELECT * FROM store
+ORDER BY price desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
